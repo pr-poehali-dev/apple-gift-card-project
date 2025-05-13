@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { toast } from "@/components/ui/use-toast";
+import { v4 as uuidv4 } from "uuid";
 
 interface GiftCardProps {
   value: number;
@@ -15,7 +16,7 @@ const GiftCard: React.FC<GiftCardProps> = ({ value, image, popular }) => {
 
   const handleAddToCart = () => {
     addToCart({
-      id: `card-${value}`,
+      id: uuidv4(),
       value,
       price: value,
       image,
@@ -23,7 +24,7 @@ const GiftCard: React.FC<GiftCardProps> = ({ value, image, popular }) => {
 
     toast({
       title: "Товар добавлен в корзину",
-      description: `Gift Card ${value} ₽ успешно добавлена`,
+      description: `Gift Card ${value} ₽ добавлена в корзину`,
       duration: 3000,
     });
   };
@@ -61,23 +62,23 @@ const GiftCard: React.FC<GiftCardProps> = ({ value, image, popular }) => {
 };
 
 const CardSection = () => {
+  const appleLogo =
+    "https://cdn.poehali.dev/files/da4bb139-553b-4aed-aca4-72bbd7fed98d.png";
+
   const cards = [
     {
       value: 1000,
-      image:
-        "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=500&auto=format&fit=crop",
+      image: appleLogo,
       popular: false,
     },
     {
       value: 2500,
-      image:
-        "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?q=80&w=500&auto=format&fit=crop",
+      image: appleLogo,
       popular: true,
     },
     {
       value: 5000,
-      image:
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=500&auto=format&fit=crop",
+      image: appleLogo,
       popular: false,
     },
   ];

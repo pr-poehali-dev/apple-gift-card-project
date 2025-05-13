@@ -1,7 +1,6 @@
-
-import React from 'react';
+import React from "react";
 import { Button } from "@/components/ui/button";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -17,15 +16,18 @@ const HeroSection = () => {
           Дарите музыку, фильмы, приложения, игры и многое другое.
         </p>
         <Link to="/cards">
-          <Button size="lg" className="rounded-full px-8 py-6 bg-white hover:bg-gray-200 text-black text-base">
+          <Button
+            size="lg"
+            className="rounded-full px-8 py-6 bg-white hover:bg-gray-200 text-black text-base"
+          >
             Купить сейчас
           </Button>
         </Link>
-        
-        <div className="mt-16 relative w-full max-w-4xl">
-          <img 
-            src="https://images.unsplash.com/photo-1606054900054-2438c13a0334?q=80&w=1400&auto=format&fit=crop"
-            alt="Apple Gift Card" 
+
+        <div className="mt-16 relative w-full max-w-md">
+          <img
+            src="https://cdn.poehali.dev/files/da4bb139-553b-4aed-aca4-72bbd7fed98d.png"
+            alt="Apple Gift Card"
             className="w-full h-auto rounded-xl shadow-xl"
           />
         </div>
