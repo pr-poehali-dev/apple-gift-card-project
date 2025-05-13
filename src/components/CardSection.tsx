@@ -3,7 +3,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { toast } from "@/components/ui/use-toast";
-import { v4 as uuidv4 } from "uuid";
+
+// Простая функция для генерации ID (вместо uuid)
+const generateId = () => {
+  return Math.random().toString(36).substring(2, 9) + "_" + Date.now();
+};
 
 interface GiftCardProps {
   value: number;
@@ -16,7 +20,7 @@ const GiftCard: React.FC<GiftCardProps> = ({ value, image, popular }) => {
 
   const handleAddToCart = () => {
     addToCart({
-      id: uuidv4(),
+      id: generateId(),
       value,
       price: value,
       image,
